@@ -7,18 +7,16 @@
 #ifndef __INCLUDE__H__
 #define __INCLUDE__H__
 	//All os-s
-	#if TARGET_OS==LINUX
-    	//Linux specific
-    	#include <SDL2/SDL.h>
-    	#include <GL/glew.h>
+	#ifdef __linux__
+    		//Linux specific
+    		#include <SDL2/SDL.h>
+    		#include <GL/glew.h>
 
-	#elif TARGET_OS==WINDOWS
-		//Windows specific
-    	#include <gl\GL.h>
-    	#include "GLEW\glew.h"
-		#include "SDL2\SDL.h"
+	#else
+			//Windows specific
+    		#include "GLEW\glew.h"
+			#include "SDL2\SDL.h"
+    		#include <gl\GL.h>
 
-	#elif TARGET_OS==MAC
-		//Not implemented, yet!
 	#endif
 #endif

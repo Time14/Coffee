@@ -2,7 +2,6 @@
 #define __DISPLAY__H__
 
 #include "include.h"
-
 #include <string>
 
 namespace coffee {
@@ -12,7 +11,6 @@ namespace coffee {
 		~Display();
 
 		void update();
-		void draw();
 
 	private:
 		SDL_Window* _window;
