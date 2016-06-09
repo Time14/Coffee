@@ -24,8 +24,7 @@ namespace coffee {
 		SDL_Event e;
 		while (SDL_PollEvent(&e)) {
 			if (e.window.event == SDL_WINDOWEVENT_CLOSE) {
-				
-				//coffee::stop();
+				coffee::stop();
 			}
 		}
 	}

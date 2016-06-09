@@ -3,11 +3,11 @@
 
 #include "include.h"
 #include "display.h"
+
 #include <string>
 
+
 namespace coffee {
-
-
 
 	Display* display;
 	bool running = true;

@@ -4,7 +4,13 @@
 #include "include.h"
 #include <string>
 
+
+
 namespace coffee {
+
+	//Forward declared stop function.
+	void stop();
+
 	class Display {
 	public:
 		Display(std::string name, int width, int height, uint32_t flags);
