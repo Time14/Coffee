@@ -11,9 +11,12 @@ namespace coffee {
 		Display(std::string name, int width, int height, uint32_t flags);
 		~Display();
 
+		void update();
+		void draw();
+
 	private:
 		SDL_Window* _window;
-		SDL_GLContext* _context;
+		SDL_GLContext _context;
 
 	};
 }
