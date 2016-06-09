@@ -59,5 +59,7 @@ Temporary Items
 *.enc
 *.idb
 
+#Whitelisting generator files
 /proj/*
 !/proj/genWin.bat
+!/proj/genLin.sh
