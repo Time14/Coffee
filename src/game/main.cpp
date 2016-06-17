@@ -3,16 +3,12 @@
 
 int main(int argc, char* argv[]) {
 
-	printf("Hello world!\n");
+	coffee::Bean core;
 
-	coffee::init("Hello World");
+	coffee::InputManager::addInput(coffee::InputData(-1, SDLK_ESCAPE, 0), "quit");
 
-	coffee::run();
+	core.brew();
 
-	coffee::quit();
-
-#ifndef __linux__
-	system("PAUSE");
-#endif
 	return 0;
 }
+ 

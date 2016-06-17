@@ -1,28 +1,44 @@
-#ifndef __DISPLAY__H__
-#define __DISPLAY__H__
-
 #include "include.h"
+
 #include <string>
-
-
 
 namespace coffee {
 
-	//Forward declared stop function.
-	void stop();
+	enum DisplayMode {
+		WINDOW, 
+		FULLSCREEN, 
+		BORDERLESS
+	};
 
 	class Display {
 	public:
-		Display(std::string name, int width, int height, uint32_t flags);
+		Display();
 		~Display();
 
-		void update();
+		int update();
+
+		void setWidth(uint16_t width);
+		void setHeight(uint16_t height);
+		void setFullScreen(bool fullScreen);
+		void setTitle(std::string title);
+
+		uint16_t getWidth() { return _width; }
+		uint16_t getHeight() { return _height; }
+
+		uint8_t getFullScreen() { return _fullScreen; }
+
+		std::string getTitle() { return _title; }
 
 	private:
-		SDL_Window* _window;
-		SDL_GLContext _context;
 
+		SDL_Window* _window = 0;
+		SDL_GLContext _context = 0;
+
+		uint16_t _width = 400;
+		uint16_t _height = 500;
+
+		uint8_t _fullScreen = DisplayMode::WINDOW;
+
+		std::string _title = "Coffee";
 	};
 }
-
-#endif
